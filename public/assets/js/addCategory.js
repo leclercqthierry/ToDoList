@@ -6,7 +6,7 @@
 import { addErrorMessage, validateTextField } from "./validate.js";
 
 // Récupération des éléments du DOM
-const form = document.getElementById("categoryForm");
+const form = document.getElementById("addCategoryForm");
 const categoryNameInput = document.getElementById("categoryName");
 const errorMessage = addErrorMessage(
     categoryNameInput,
