@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.error {
+    color: crimson;
+    font-style: italic;
+}

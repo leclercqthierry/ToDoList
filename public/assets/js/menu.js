@@ -1,3 +1,8 @@
+/**
+ * Menu burger
+ * @description Gère l'affichage du menu burger sur mobile
+ */
+
 document.getElementById("menu-toggle").addEventListener("click", function () {
     const menu = document.getElementById("menu");
     const bar1 = document.getElementById("bar1");
