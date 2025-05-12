@@ -9,7 +9,6 @@ document.getElementById("menu-toggle").addEventListener("click", function () {
     const bar2 = document.getElementById("bar2");
     const bar3 = document.getElementById("bar3");
 
-    // Vérification pour mobile
     menu.classList.toggle("hidden");
     menu.classList.toggle("flex");
 

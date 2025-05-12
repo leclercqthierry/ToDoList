@@ -76,3 +76,14 @@ export function addCategoriesToSelect(selectElement) {
         selectElement.appendChild(option);
     });
 }
+
+/**
+ * @description Récupère le nom d'une catégorie à partir de son identifiant
+ * @param {String} id - L'identifiant de la catégorie
+ * @returns {String!null} - Le nom de la catégorie ou null si non trouvé
+ */
+export function getCategoryNameById(id) {
+    const categories = getAllCategoriesFromLocalStorage();
+    const category = categories.find((cat) => String(cat.id) === id);
+    return category ? category.name : null;
+}

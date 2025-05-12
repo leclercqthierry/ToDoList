@@ -18,6 +18,7 @@ const categorySelect = document.getElementById("deleteCategory");
 const errorMessage = addErrorMessage(
     categoryNameInput,
     "Le nom de la catégorie doit contenir entre 3 et 20 caractères.",
+    "afterend",
 );
 const regex = /^[a-zA-Z0-9]{3,20}$/;
 
