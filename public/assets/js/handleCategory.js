@@ -1,5 +1,4 @@
 /**
- * @file handleCategory.js
  * @description Gère les catégories
  */
 

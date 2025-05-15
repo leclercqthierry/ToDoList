@@ -76,6 +76,6 @@ form.addEventListener("submit", (event) => {
             ? new Date(dueDate.value).toLocaleDateString("fr-FR")
             : null,
     );
-
-    console.log(task);
+    task.addTaskToLocalStorage();
+    form.submit();
 });

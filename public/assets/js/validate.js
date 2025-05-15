@@ -6,15 +6,15 @@
  * Ajoute un message d'erreur sous le champ
  * @param {HTMLElement} field - Le champ
  * @param {string} errorMessage - Le message d'erreur
- * @param {string} place - La position de l'erreur
+ * @param {string} position - La position de l'erreur
  * @returns {HTMLElement} - L'élément de message d'erreur
  */
-export function addErrorMessage(field, errorMessage, place) {
+export function addErrorMessage(field, errorMessage, position) {
     const error = document.createElement("p");
     error.classList.add("error");
     error.textContent = errorMessage;
     error.style.display = "none";
-    field.insertAdjacentElement(place, error);
+    field.insertAdjacentElement(position, error);
     return error;
 }
 

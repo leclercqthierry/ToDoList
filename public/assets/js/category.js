@@ -1,6 +1,5 @@
 /**
  * @description Gère les formulaires d'ajout et de suppression de catégories
- * @file category.js
  */
 
 import { addErrorMessage, validateTextField } from "./validate.js";

@@ -23,7 +23,7 @@ export class Task {
         this.#description = description;
         this.#category = category;
         this.#dueDate = dueDate ? dueDate : null; // Si aucune date d'échéance n'est fournie, elle est définie sur null
-        this.#id = Date.now(); // Utilisation de Date.now() pour générer un ID unique basé sur le timestamp actuel
+        this.#id = 0;
         this.#completed = false; // Par défaut, la tâche n'est pas complétée
     }
 
@@ -71,5 +71,30 @@ export class Task {
 
     set completed(value) {
         this.#completed = value;
+    }
+
+    /**
+     * @description Ajoute la tâche à la liste des tâches dans le localStorage
+     * Attention : l'objet stocké dans le localStorage est de type Object et non Task
+     * @returns {void}
+     */
+    addTaskToLocalStorage() {
+        // Récupérer les tâches existantes dans le localStorage
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+        // Vérifier si une tâche avec le même titre existe déjà
+        const existingTask = tasks.find((task) => task.title === this.#title);
+        if (!existingTask) {
+            this.#id = tasks.length;
+            tasks.push({
+                id: this.#id,
+                title: this.#title,
+                description: this.#description,
+                category: this.#category,
+                dueDate: this.#dueDate,
+                completed: this.#completed,
+            });
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
     }
 }
