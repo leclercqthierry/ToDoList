@@ -27,7 +27,7 @@ export function addCategoryToLocalStorage(category) {
     if (!categoryExists) {
         // Si elle n'existe pas déjà on enregistre la catégorie dans le localStorage
         const newCategory = {
-            id: Date.now(), // Utilisation de Date.now() pour générer un identifiant unique
+            id: category.name,
             name: category.name,
         };
 
