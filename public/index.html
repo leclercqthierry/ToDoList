@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do List</title>
+        <link
+            rel="shortcut icon"
+            href="./assets/img/liste-de-taches.png"
+            author="smashingstocks"
+        />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body class="font(font-family:'Arial', sans-serif) m-0 bg-gray-200 p-0">
+        <header>
+            <nav class="bg-gray-950 p-4">
+                <div
+                    class="cursor-pointer text-2xl text-white transition-transform duration-500 md:hidden"
+                    id="menu-toggle"
+                >
+                    <div
+                        class="mb-1 h-1 w-6 bg-white transition-transform"
+                        id="bar1"
+                    ></div>
+                    <div
+                        class="mb-1 h-1 w-6 bg-white transition-opacity"
+                        id="bar2"
+                    ></div>
+                    <div
+                        class="h-1 w-6 bg-white transition-transform"
+                        id="bar3"
+                    ></div>
+                </div>
+                <ul
+                    class="hidden flex-col items-center text-white md:flex md:flex-row md:gap-4"
+                    id="menu"
+                >
+                    <li class="text-center">
+                        <a href="category.html" class="hover:text-gray-400"
+                            >Ajouter/Supprimer une catégorie</a
+                        >
+                    </li>
+                    <li class="text-center">
+                        <a href="addTask.html" class="hover:text-gray-400"
+                            >Ajouter une tâche</a
+                        >
+                    </li>
+                    <li class="text-center">
+                        <a href="index.html" class="hover:text-gray-400"
+                            >Liste de tâches</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1
+                class="m-0 bg-gray-600 p-4 text-center text-2xl text-white md:text-4xl"
+            >
+                Liste de choses à faire
+            </h1>
+            <section
+                id="filterSortControls"
+                class="flex w-full flex-col items-center justify-center gap-3 rounded-lg bg-gray-100 p-4 shadow-md md:flex-row"
+            >
+                <div class="w-full text-center md:text-left">
+                    <label
+                        for="filterCategory"
+                        class="block text-xs font-medium text-gray-700 sm:text-sm"
+                        >Filtrer par catégorie :</label
+                    >
+                    <select
+                        id="filterCategory"
+                        class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring focus:ring-indigo-500 focus:outline-none"
+                    >
+                        <option value="Toutes" selected>Toutes</option>
+                    </select>
+                </div>
+                <div class="w-full text-center md:text-left">
+                    <label
+                        for="filterStatus"
+                        class="block text-xs font-medium text-gray-700 sm:text-sm"
+                        >Filtrer par statut :</label
+                    >
+                    <select
+                        id="filterStatus"
+                        class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring focus:ring-indigo-500 focus:outline-none"
+                    >
+                        <option value="">Tous</option>
+                        <option value="completed">Complétées</option>
+                        <option value="notCompleted">Non complétées</option>
+                    </select>
+                </div>
+                <div class="w-full text-center md:text-left">
+                    <label
+                        for="sortTasks"
+                        class="block text-xs font-medium text-gray-700 sm:text-sm"
+                        >Trier par :</label
+                    >
+                    <select
+                        id="sortTasks"
+                        class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:ring focus:ring-indigo-500 focus:outline-none"
+                    >
+                        <option value="">Aucun</option>
+                        <option value="alphabetical">Alphabétique</option>
+                        <option value="date">Date d'échéance</option>
+                        <option value="status">Statut</option>
+                    </select>
+                </div>
+            </section>
+            <ul id="taskList" class="m-0 mt-2 flex list-none flex-col p-0"></ul>
+        </main>
+        <script src="./assets/js/menu.js"></script>
+        <script src="./assets/js/index.js" type="module"></script>
+    </body>
+</html>
